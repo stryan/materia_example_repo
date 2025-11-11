@@ -1,6 +1,5 @@
 [hosts]
 [hosts.localhost]
-components = ["freshrss"]
 roles = ["base"]
 
 [roles]
