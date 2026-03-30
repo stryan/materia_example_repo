@@ -14,7 +14,6 @@ Environment=CONTAINER_HOST=unix:///run/podman/podman.sock
 SecurityLabelDisable=true
 User=root
 PublishPort={{.port}}:9882
-{{ snippet "autoUpdate" "registry" }}
 
 [Install]
 # Start by default on boot
