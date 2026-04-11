@@ -19,11 +19,11 @@ podman run --name materia --rm \
     --env MATERIA_SOPS__SUFFIX=enc \
     --env MATERIA_SOPS__BASE_DIR=attributes \
 	--env MATERIA_SOURCE__URL="git://github.com/stryan/materia_example_repo" \
-	-v /run/dbus/system_bus_socket \
-	-v /run/podman/podman.sock \
-	-v /var/lib/materia \
-	-v /etc/containers/systemd \
-	-v /etc/systemd/system \
+	-v /run/dbus/system_bus_socket:/run/dbus/system_bus_socket \
+	-v /run/podman/podman.sock:/run/podman/podman.sock \
+	-v /var/lib/materia:/var/lib/materia \
+	-v /etc/containers/systemd:/etc/containers/systemd \
+	-v /etc/systemd/system:/etc/systemd/system \
 	-v /etc/materia:/etc/materia:ro \
 	ghcr.io/stryan/materia:latest update
 	```
