@@ -2,9 +2,12 @@
 
 This is an example [Materia](https://primamateria.systems) repository. It is useable both as-is or as a template for your own repository.
 
+This repository is not designed to be used in a rootless environment, as `podman_exporter` requires access to the podman socket. However, if you don't mind doing a quick edit, you can remove the `base` roll from the manifest to not install the exporter.
+
 ## To use as-is
 
 0. (OPTIONAL) Fork this repository and modify the [MANIFEST.toml](./MANIFEST.toml) to have [Hosts.TargetHost] instead of [Hosts.localhost].
+0. (OPTIONAL) Update the `MANIFEST.toml` file and remove the `roles = ["base"]` line to make this runnable in rootless.
 1. Install Materia on the target host.
 2. On the target host, run `mkdir -p /etc/materia /var/lib/materia` to create default directories.
 3. On the target host, enable the podman socket: `sudo systemctl enable --now podman.socket`
